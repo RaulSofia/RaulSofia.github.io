@@ -13,10 +13,8 @@ const config1 = {
         ]
     },
     options: {
-        responsive: true,
         interaction: {
-        intersect: false,
-        axis: ['x', 'y']
+            mode: 'point'
         },
         layout: {
             padding: {
@@ -27,10 +25,12 @@ const config1 = {
             }
         },
         plugins: {
-            tooltips: {
+            display: true,
+            tooltip: {
                 enabled: false,
-                position: "nearest",
-                external: externalTooltipHandler
+                position: 'nearest',
+                external: externalTooltipHandler,
+                smiles: 1
             },
             legend: {
                 display: false,
