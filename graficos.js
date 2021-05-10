@@ -13,10 +13,10 @@ const graficos = [
         x: "logp",
         y: "sas",
         config: config1
-    },
+    }/*,
     {
         x: "logp",
         y: "mw",
         config: config1
-    }
+    }*/
 ]
