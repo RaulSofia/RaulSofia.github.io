@@ -32,20 +32,33 @@ const externalTooltipHandler = (context) => {
         tooltipEl.style.opacity = 0;
         return;
     }
-  
+    let max_img_width = 0;
     // Set Text
     if (tooltip.body) {
         const bodyLines = tooltip.body.map(b => b.lines);
-        //console.log(bodyLines);
+        //console.log(tooltip);
+
         const tableHead = document.createElement('thead');
-  
+        
         const tableBody = document.createElement('tbody');
         bodyLines.forEach((body, i) => {
             const colors = tooltip.labelColors[i];
-        
+            const smile_label = tooltip.dataPoints[0].raw.smiles;
+            const ihead = document.createElement('ihead');
+            const smile_text = document.createTextNode(smile_label);
+            ihead.appendChild(smile_text);
             const imagem = document.createElement('IMG');
             //console.log(tooltip.dataPoints[0].raw.id);
-            imagem.src = "molecules/" + String(tooltip.dataPoints[0].raw.id) + ".png"
+            imagem.src = "molecules/" + String(tooltip.dataPoints[0].raw.id) + ".png";
+            imagem.onload = function() {
+                max_img_width = Math.max(max_img_width, this.width);
+                //console.log(width);
+
+            }
+            console.log(max_img_width);
+            
+            //console.log(max_img_width);
+            tableBody.appendChild(ihead);
             tableBody.appendChild(imagem);
         });
   
@@ -66,6 +79,9 @@ const externalTooltipHandler = (context) => {
     // Display, position, and set styles for font
     tooltipEl.style.opacity = 1;
     tooltipEl.style.left = positionX + tooltip.caretX + 'px';
+    //tooltipEl.style.right = positionX + tooltip.caretX + 'px';
+    
+    console.log(tooltipEl.querySelector('img').width);
     tooltipEl.style.top = positionY + tooltip.caretY + 'px';
     tooltipEl.style.font = tooltip.options.bodyFont.string;
     tooltipEl.style.padding = tooltip.options.padding + 'px ' + tooltip.options.padding + 'px';
@@ -111,7 +127,8 @@ async function plotData(id, xAxis, yAxis, config, larg, alt) {
         eixos.push({
         x: dados[xAxis][i],
         y: dados[yAxis][i],
-        id: dados.id[i]
+        id: dados.id[i],
+        smiles: dados.smiles[i]
         });
     }
     //console.log(config);
@@ -121,11 +138,12 @@ async function plotData(id, xAxis, yAxis, config, larg, alt) {
     config_local.options.scales.y.title.text = yAxis
     config_local.options.plugins.tooltip.external = externalTooltipHandler; //quando uso o stringify + parse em cima perde esta propriedade n sei pq
     //console.log(config_local);
-    let canvas = document.createElement("CANVAS");
-    canvas.id = id;
-    canvas.width = larg;
-    canvas.height = alt;
-    document.body.appendChild(canvas);
+    //let canvas = document.createElement("CANVAS");
+    //canvas.id = id;
+    //canvas.width = larg;
+    //canvas.height = alt;
+    //document.getElementById('div1').appendChild(canvas);
+    const canvas = document.getElementById(id);
     const ctx = canvas.getContext("2d");
     const plot = new Chart(ctx, config_local);
 }

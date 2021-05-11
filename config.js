@@ -30,7 +30,7 @@ const config1 = {
                 enabled: false,
                 position: 'nearest',
                 external: externalTooltipHandler,
-                smiles: 1
+                title: "lol"
             },
             legend: {
                 display: false,
