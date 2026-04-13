@@ -6,18 +6,27 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
   (function() {
-    const url = new URL(window.location);
-    const fromParam = url.searchParams.get('from');
-    if (fromParam === 'resume') {
-      if (window.umami && typeof umami.track === 'function') {
-        umami.track((props) => ({
-          ...props,
-          referrer: 'https://curriculum-vitae.pdf'
-        }));
+    const checkUmami = () => {
+      const url = new URL(window.location);
+      const fromParam = url.searchParams.get('from');
+
+      if (fromParam === 'resume') {
+        if (window.umami && typeof window.umami.track === 'function') {
+          
+          window.umami.track((props) => ({
+            ...props,
+            referrer: 'https://curriculum-vitae.pdf'
+          }));
+
+          url.searchParams.delete('from');
+          window.history.replaceState({}, document.title, url.pathname + url.search);
+        } else {
+          setTimeout(checkUmami, 50);
+        }
       }
-      url.searchParams.delete('from');
-      window.history.replaceState({}, document.title, url.pathname + url.search);
-    }
+    };
+
+    checkUmami();
   })();
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
