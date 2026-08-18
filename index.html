@@ -10,17 +10,22 @@
       const url = new URL(window.location);
       const fromParam = url.searchParams.get('from');
 
-      if (fromParam === 'resume') {
+      // Check if ANY 'from' parameter exists
+      if (fromParam) {
         if (window.umami && typeof window.umami.track === 'function') {
           
+          // Dynamically format the referrer based on the parameter
+          // E.g., if from=traid2026, it logs as 'https://traid2026.source'
           window.umami.track((props) => ({
             ...props,
-            referrer: 'https://curriculum-vitae.pdf'
+            referrer: `https://${fromParam}.source` 
           }));
 
+          // Clean up the URL so the user doesn't see the tracking param
           url.searchParams.delete('from');
           window.history.replaceState({}, document.title, url.pathname + url.search);
         } else {
+          // If Umami hasn't loaded yet, try again in 50ms
           setTimeout(checkUmami, 50);
         }
       }
