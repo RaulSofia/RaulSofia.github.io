@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About
+permalink: /about/
 ---
 
 <section class="max-w-4xl w-full z-10 text-left">

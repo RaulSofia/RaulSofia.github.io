@@ -1,10 +1,6 @@
 markdown: kramdown
+url: https://raulsofia.github.io
+baseurl: ""
 plugins:
   - jekyll-sitemap
 permalink: /posts/:title/
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      permalink: /:basename/
