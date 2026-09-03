@@ -4,6 +4,7 @@ title: "Bonder at the ELLIS TRAID 2026 Summer School"
 date: 2026-08-29 10:00:00 +0100
 categories: [research, events]
 excerpt: "I presented a poster on the Bonder model at the ELLIS Summer School on Trustworthy & Responsible AI in Drug Discovery (TRAID) in Saarbrücken."
+image: /assets/static/bonder_poster_traid2026.jpeg
 ---
 
 <a class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-cyan-300 transition-colors" href="{{ '/posters/traid2026/' | relative_url }}">

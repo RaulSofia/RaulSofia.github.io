@@ -4,6 +4,7 @@ title: "Master's Thesis Defended!"
 date: 2026-01-25 14:00:00 +0100
 categories: [research, milestones]
 excerpt: "Wrapping up my Master's in Data Science and Engineering with a focus on 3D de novo molecular design."
+image: /assets/static/thesis_defense.jpeg
 download_url: "/assets/docs/master_thesis_raul_sofia.pdf"
 download_label: "Download my Master's Thesis"
 ---

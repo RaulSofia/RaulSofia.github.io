@@ -4,9 +4,10 @@ title: "1st Place at BotOlympics"
 date: 2025-04-02 10:00:00 +0100
 categories: [hardware, events]
 excerpt: "Building an autonomous maze-navigating robot and winning the BotOlympics competition."
+image: /assets/static/bot_olympics_crop.jpg
 ---
 
-<img src="{{ '/assets/static/bot_olympics_crop.jpg' | relative_url }}" alt="Raul Sofia and his team with their BotOlympics robot" class="w-full h-auto rounded-xl shadow-md my-8 border border-outline-variant/20">
+<img src="{{ '/assets/static/bot_olympics_crop.jpg' | relative_url }}" alt="Raul Sofia and his team at their BotOlympics victory" class="w-full h-auto rounded-xl shadow-md my-8 border border-outline-variant/20">
 
 I'm really proud to share that our team took first place at the BotOlympics robotics competition. I competed alongside Rodrigo Pato Nogueira, João Pino, and Carlos Pereira, and it ended up being a fun side-quest to pull off together.
 
