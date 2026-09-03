@@ -8,7 +8,7 @@ title: About
     <div>
       <h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface">About me</h1>
     </div>
-    <a class="group relative flex shrink-0 items-center gap-3 px-5 py-3 bg-primary text-on-primary font-headline font-bold rounded-md transition-all hover:shadow-[0_0_20px_rgba(0,218,243,0.3)] active:scale-95" href="assets/docs/CV_RaulSofia.pdf" target="_blank" download>
+    <a class="group relative flex shrink-0 items-center gap-3 px-5 py-3 bg-primary text-on-primary font-headline font-bold rounded-md transition-all hover:shadow-[0_0_20px_rgba(0,218,243,0.3)] active:scale-95" href="{{ '/assets/docs/CV_RaulSofia.pdf' | relative_url }}" target="_blank" download>
       <span class="material-symbols-outlined text-[18px]">description</span>
       CV
     </a>
