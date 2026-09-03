@@ -21,6 +21,10 @@ defaults:
     values:
       image: /assets/static/eu_madeira_crop.jpeg
   - scope:
-      path: "posters/traid2026/index.html"
+      path: "posters/**"
+    values:
+      sitemap: false
+  - scope:
+      path: "googleb7ecd3444b88976d.html"
     values:
       sitemap: false
