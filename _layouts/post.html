@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article class="max-w-3xl w-full z-10 text-left">
+  <style>
+    .post-content a {
+      color: #00daf3;
+      font-weight: 600;
+    }
+    .post-content a:hover {
+      color: #67e8f9;
+    }
+  </style>
+  <header class="mb-10">
+    <a class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-cyan-300 transition-colors" href="{{ '/posts.html' | relative_url }}">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+      Back to posts
+    </a>
+    <h1 class="mt-6 font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface leading-tight">{{ page.title }}</h1>
+    <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.18em] text-slate-400">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>
+      {% if page.categories and page.categories != empty %}
+      <span aria-hidden="true">/</span>
+      <span>{{ page.categories | join: " / " }}</span>
+      {% endif %}
+    </div>
+    {% if page.download_url %}
+    <a class="mt-6 group relative inline-flex items-center gap-3 px-5 py-3 bg-primary text-on-primary font-headline font-bold rounded-md transition-all hover:shadow-[0_0_20px_rgba(0,218,243,0.3)] active:scale-95" href="{{ page.download_url | relative_url }}" target="_blank" download>
+      <span class="material-symbols-outlined text-[18px]">description</span>
+      {{ page.download_label | default: "Download" }}
+    </a>
+    {% endif %}
+  </header>
+
+  <div class="post-content page-card rounded-2xl p-6 md:p-8 text-on-surface-variant text-base md:text-lg leading-relaxed space-y-5">
+    {{ content }}
+  </div>
+</article>

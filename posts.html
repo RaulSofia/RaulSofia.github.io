@@ -1,0 +1,23 @@
+---
+layout: default
+title: Posts
+---
+
+<section class="max-w-4xl w-full z-10 text-left">
+  <div class="mb-10">
+    <h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tighter text-on-surface">Posts</h1>
+  </div>
+
+  <div class="relative pl-8 md:pl-10 space-y-8">
+    {% assign posts_by_date = site.posts | sort: "date" | reverse %}
+    {% for post in posts_by_date %}
+    <article class="timeline-card relative page-card rounded-2xl p-5 md:p-6">
+      <div class="text-[10px] uppercase tracking-[0.22em] text-slate-400 mb-2">{{ post.date | date: "%b %d, %Y" }}</div>
+      <h2 class="font-headline text-2xl font-bold text-on-surface mb-2">
+        <a class="hover:text-primary transition-colors" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="text-on-surface-variant leading-relaxed">{{ post.excerpt | strip_html | truncatewords: 36 }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>

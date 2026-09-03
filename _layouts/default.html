@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% if page.title %}{{ page.title }} | {{ site.title | default: "Raul Sofia" }}{% else %}Raul Sofia{% endif %}</title>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="1fe88801-a37f-415e-aad4-67877b9e0c63" data-domains="raulsofia.github.io"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      (function() {
+        const checkUmami = () => {
+          const url = new URL(window.location);
+          const fromParam = url.searchParams.get('from');
+
+          if (fromParam) {
+            if (window.umami && typeof window.umami.track === 'function') {
+              window.umami.track((props) => ({
+                ...props,
+                referrer: `https://${fromParam}.source` 
+              }));
+
+              url.searchParams.delete('from');
+              window.history.replaceState({}, document.title, url.pathname + url.search);
+            } else {
+              setTimeout(checkUmami, 50);
+            }
+          }
+        };
+
+        checkUmami();
+      })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#c6c7c3",
+              "on-error": "#690005",
+              "outline": "#8e9196",
+              "background": "#061423",
+              "on-background": "#d6e4f9",
+              "surface": "#061423",
+              "tertiary-fixed-dim": "#c6c7c3",
+              "primary-fixed-dim": "#00daf3",
+              "on-tertiary-container": "#818380",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed": "#e2e3df",
+              "on-tertiary-fixed-variant": "#454745",
+              "surface-container": "#132030",
+              "on-secondary-fixed": "#101b30",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#004f58",
+              "surface-dim": "#061423",
+              "inverse-surface": "#d6e4f9",
+              "on-surface-variant": "#c4c6cc",
+              "surface-bright": "#2d3a4a",
+              "on-primary": "#00363d",
+              "primary-container": "#001e22",
+              "outline-variant": "#44474c",
+              "secondary-fixed": "#d7e2ff",
+              "primary": "#00daf3",
+              "surface-container-low": "#0f1c2c",
+              "on-tertiary-fixed": "#1a1c1a",
+              "on-secondary-container": "#adb8d3",
+              "tertiary-container": "#181b19",
+              "surface-variant": "#283646",
+              "on-surface": "#d6e4f9",
+              "inverse-primary": "#006875",
+              "surface-container-highest": "#283646",
+              "surface-container-high": "#1e2b3b",
+              "secondary": "#bbc6e2",
+              "on-primary-container": "#0090a1",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#243141",
+              "secondary-container": "#3e4960",
+              "on-secondary-fixed-variant": "#3c475d",
+              "secondary-fixed-dim": "#bbc6e2",
+              "primary-fixed": "#9cf0ff",
+              "on-secondary": "#263046",
+              "on-tertiary": "#2f312e",
+              "on-primary-fixed": "#001f24",
+              "surface-container-lowest": "#020f1e",
+              "surface-tint": "#00daf3"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .grid-pattern {
+        background-image: radial-gradient(circle, #c4c6cc 1px, transparent 1px);
+        background-size: 1.4rem 1.4rem;
+        opacity: 0.05;
+      }
+      @keyframes block-build-1 {
+        0% { transform: translateY(10px); opacity: 0; }
+        10%, 80% { transform: translateY(0); opacity: 1; }
+        90%, 100% { transform: translateY(10px); opacity: 0; }
+      }
+      @keyframes block-build-2 {
+        0%, 20% { transform: translateY(10px); opacity: 0; }
+        30%, 80% { transform: translateY(0); opacity: 1; }
+        90%, 100% { transform: translateY(10px); opacity: 0; }
+      }
+      @keyframes block-build-3 {
+        0%, 40% { transform: translateY(10px); opacity: 0; }
+        50%, 80% { transform: translateY(0); opacity: 1; }
+        90%, 100% { transform: translateY(10px); opacity: 0; }
+      }
+      @keyframes block-build-4 {
+        0%, 60% { transform: translateY(10px); opacity: 0; }
+        70%, 80% { transform: translateY(0); opacity: 1; }
+        90%, 100% { transform: translateY(10px); opacity: 0; }
+      }
+      .animate-build {
+        opacity: 0;
+      }
+      .animate-build:nth-child(1) { animation: block-build-1 5s infinite ease-in-out; }
+      .animate-build:nth-child(2) { animation: block-build-2 5s infinite ease-in-out; }
+      .animate-build:nth-child(3) { animation: block-build-3 5s infinite ease-in-out; }
+      .animate-build:nth-child(4) { animation: block-build-4 5s infinite ease-in-out; }
+      .nav-link {
+        color: rgba(214, 228, 249, 0.72);
+        transition: color 0.2s ease;
+      }
+      .nav-link:hover {
+        color: #00daf3;
+      }
+      .slider-shell {
+        position: relative;
+        overflow: hidden;
+      }
+      .slider-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+      .slide {
+        min-width: 100%;
+        display: block;
+      }
+      .slider-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 9999px;
+        border: 1px solid rgba(196, 198, 204, 0.4);
+        background: transparent;
+        transition: all 0.2s ease;
+      }
+      .slider-dot.active {
+        background: #00daf3;
+        border-color: #00daf3;
+        box-shadow: 0 0 18px rgba(0, 218, 243, 0.5);
+      }
+      .page-card {
+        background: rgba(19, 32, 48, 0.55);
+        border: 1px solid rgba(196, 198, 204, 0.16);
+        backdrop-filter: blur(8px);
+      }
+      .timeline-card::before {
+        content: "";
+        position: absolute;
+        left: -1.1rem;
+        top: 1.4rem;
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 9999px;
+        background: #00daf3;
+        box-shadow: 0 0 0 5px rgba(0, 218, 243, 0.12);
+      }
+    </style>
+    <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }</style>
+  </head>
+  <body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary" data-mode="connect">
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+    <nav class="fixed top-0 w-full z-50 bg-[#061423]/60 backdrop-blur-xl bg-gradient-to-b from-[#061423] to-transparent">
+      <div class="flex justify-between items-center px-4 py-4 md:px-8 md:py-6 max-w-7xl mx-auto">
+        <a href="{{ '/' | relative_url }}" class="text-xl font-bold tracking-tighter text-slate-100 font-headline hover:text-primary transition-colors">Raul Sofia</a>
+        <div class="flex items-center gap-3 md:gap-5 text-[10px] md:text-xs uppercase tracking-[0.2em]">
+          <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
+          <a class="nav-link" href="{{ '/posts.html' | relative_url }}">Posts</a>
+          <a class="nav-link" href="{{ '/research.html' | relative_url }}">Research</a>
+          <a class="nav-link" href="{{ '/about.html' | relative_url }}">About</a>
+        </div>
+      </div>
+    </nav>
+    <main class="relative min-h-screen flex flex-col items-center justify-start px-6 overflow-hidden pt-16 md:items-center md:justify-center md:pt-20">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+      {{ content }}
+    </main>
+    <footer class="w-full py-12 bg-transparent">
+      <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-6 md:gap-0">
+        <div class="flex flex-col items-center md:items-start">
+          <span class="text-slate-200 font-semibold font-headline tracking-tight">Raul Sofia</span>
+          <span class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-slate-500 mt-1">© 2026. Built by Raul Sofia.</span>
+        </div>
+        <div class="flex items-center gap-10">
+          <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-100 transition-colors" href="https://github.com/RaulSofia">GitHub</a>
+          <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-100 transition-colors" href="https://www.linkedin.com/in/raul-sofia/">LinkedIn</a>
+          <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-100 transition-colors" href="https://scholar.google.com/citations?user=ERxgLK4AAAAJ" rel="noopener" target="_blank">Google Scholar</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        const prev = document.querySelector('.slider-prev');
+        const next = document.querySelector('.slider-next');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        if (!track || slides.length === 0) return;
+
+        let index = 0;
+        let autoplayPausedUntil = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        function render() {
+          track.style.transform = `translateX(-${index * 100}%)`;
+          dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === index);
+          });
+        }
+
+        function pauseAutoplay() {
+          autoplayPausedUntil = Date.now() + 15000;
+        }
+
+        function moveTo(nextIndex) {
+          index = (nextIndex + slides.length) % slides.length;
+          pauseAutoplay();
+          render();
+        }
+
+        prev && prev.addEventListener('click', function () {
+          moveTo(index - 1);
+        });
+
+        next && next.addEventListener('click', function () {
+          moveTo(index + 1);
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.addEventListener('click', function () {
+            moveTo(dotIndex);
+          });
+        });
+
+        track.addEventListener('touchstart', function (event) {
+          const touch = event.changedTouches[0];
+          touchStartX = touch.clientX;
+          touchStartY = touch.clientY;
+        }, { passive: true });
+
+        track.addEventListener('touchend', function (event) {
+          const touch = event.changedTouches[0];
+          const deltaX = touch.clientX - touchStartX;
+          const deltaY = touch.clientY - touchStartY;
+
+          if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+          moveTo(index + (deltaX < 0 ? 1 : -1));
+        }, { passive: true });
+
+        setInterval(function () {
+          if (Date.now() < autoplayPausedUntil) return;
+          index = (index + 1) % slides.length;
+          render();
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
