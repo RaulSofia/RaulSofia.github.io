@@ -1,0 +1,20 @@
+name: "Submit to IndexNow"
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # manual button?
+  schedule:
+    - cron: '0 2 * * *' # apparently only as failsafe, and only pings if diff
+
+jobs:
+  submit-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: IndexNow Action
+        uses: bojieyang/indexnow-action@v3 # thanks dude!
+        with:
+          sitemap-location: 'https://raulsofia.github.io/sitemap.xml'
+          key: ${{ secrets.INDEXNOW_KEY }}
+          endpoint: 'www.bing.com'
