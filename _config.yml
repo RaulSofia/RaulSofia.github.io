@@ -2,26 +2,36 @@ markdown: kramdown
 title: "Raul Sofia"
 tagline: "AI Researcher & Machine Learning Engineer"
 description: "I specialize in deep learning, generative AI, and geometric deep learning. I build AI systems that operate on the 3D world, often related to drug design."
-logo: /assets/static/eu_madeira_crop.jpeg
+logo: /assets/images/eu-madeira-crop.jpeg
 url: https://raulsofia.github.io
 baseurl: ""
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 permalink: /posts/:title/
+collections:
+  posters:
+    output: true
+    permalink: /posters/:path/
+  research:
+    output: false
 defaults:
   - scope:
       path: ""
       type: "pages"
     values:
-      image: /assets/static/eu_madeira_crop.jpeg
+      image: /assets/images/eu-madeira-crop.jpeg
   - scope:
       path: ""
       type: "posts"
     values:
-      image: /assets/static/eu_madeira_crop.jpeg
+      image: /assets/images/eu-madeira-crop.jpeg
   - scope:
-      path: "posters/**"
+      type: "posters"
+    values:
+      sitemap: false
+  - scope:
+      type: "research"
     values:
       sitemap: false
   - scope:

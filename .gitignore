@@ -1,3 +1,16 @@
 _site/
 .jekyll-cache/
 .sass-cache/
+node_modules/
+assets/css/site.generated.css
+.bundle/
+vendor/bundle/
+vendor/cache/
+vendor/gems/
+vendor/ruby/
+.jekyll-metadata
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db

@@ -4,8 +4,8 @@ title: "Master's Thesis Defended!"
 date: 2026-01-25 14:00:00 +0100
 categories: [research, milestones]
 excerpt: "Wrapping up my Master's in Data Science and Engineering with a focus on 3D de novo molecular design."
-image: /assets/static/thesis_defense.jpeg
-download_url: "/assets/docs/master_thesis_raul_sofia.pdf"
+image: /assets/images/thesis-defense.jpeg
+download_url: "/assets/documents/masters-thesis-raul-sofia.pdf"
 download_label: "Download my Master's Thesis"
 ---
 
@@ -17,13 +17,13 @@ The specific approach I took was based on convolutional neural network (CNN) dif
 
 This work was essentially the culmination of my time at LARN, bringing together my biochemistry background and spatially aware AI models to overcome the limitations of traditional sequence-based generation.
 
-<img src="{{ '/assets/static/thesis_defense.jpeg' | relative_url }}" alt="Raul Sofia defending his Master's thesis" class="w-full h-auto rounded-xl shadow-md my-8 border border-outline-variant/20">
+<img src="{{ '/assets/images/thesis-defense.jpeg' | relative_url }}" alt="Raul Sofia defending his Master's thesis" class="w-full h-auto rounded-xl shadow-md my-8 border border-outline-variant/20">
 
 The defense itself was an opportunity to discuss current bottlenecks in generative chemistry. My thesis was supervised by Dr. <a class="inline-link" href="https://joelarrais.github.io/" rel="noopener" target="_blank">Joel Perdiz Arrais</a> and Dr. Maryam Abbasi. The jury consisted of Dr. Nuno Lourenço and Dr. Carlos Lisboa Bento.
 
 If you want to look at the architectural choices or the benchmarking results, you can download the full document using the button above.
 
-<a class="action-link inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-cyan-300 transition-colors" href="{{ '/assets/docs/master_thesis_raul_sofia.pdf' | relative_url }}" target="_blank">
+<a class="action-link inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-cyan-300 transition-colors" href="{{ '/assets/documents/masters-thesis-raul-sofia.pdf' | relative_url }}" target="_blank">
 	See master's thesis
 	<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
 </a>

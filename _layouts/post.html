@@ -22,7 +22,7 @@ layout: default
       {% endif %}
     </div>
     {% if page.download_url %}
-    <a class="mt-6 group relative inline-flex items-center gap-3 px-5 py-3 bg-primary text-on-primary font-headline font-bold rounded-md transition-all hover:shadow-[0_0_20px_rgba(0,218,243,0.3)] active:scale-95" href="{{ page.download_url | relative_url }}" target="_blank" download>
+    <a class="mt-6 group relative inline-flex items-center gap-3 px-5 py-3 bg-primary text-on-primary font-headline font-bold rounded-lg transition-all hover:shadow-[0_0_20px_rgba(0,218,243,0.3)] active:scale-95" href="{{ page.download_url | relative_url }}" target="_blank" download>
       <span class="material-symbols-outlined text-[18px]">description</span>
       {{ page.download_label | default: "Download" }}
     </a>

@@ -1,0 +1,39 @@
+---
+layout: none
+---
+# Raul Sofia - AI Researcher & Machine Learning Engineer
+
+## About
+{% assign about_page = site.pages | where: "path", "about.md" | first %}
+{{ about_page.content | strip_html | strip_newlines }}
+Complete section: {{ site.url }}/about/
+* Current Role: Researcher at CISUC, focusing on geometric deep learning applied to molecular structures.
+* Education: Concurrently completed two completely separate, full-time Bachelor's degrees (Biochemistry and Informatics Engineering), followed by an M.Sc. in Data Science and Engineering (19/20).
+* Main Tech Stack: Python, PyTorch, C, C++, CUDA, Triton, ONNX, RDKit, Docker, Linux.
+
+## Formal Research & Outputs
+Complete section: {{ site.url }}/research/
+{% for item in site.research %}
+* {{ item.title }} ({{ item.year }})
+  Type: {{ item.type | capitalize }}
+  URL: {% if item.external %}{{ item.link_url }}{% else %}{{ site.url }}{{ item.link_url }}{% endif %}
+  Context: {{ item.ai_summary | default: item.excerpt | strip_html | strip_newlines }}
+{% endfor %}
+
+## Recent Logs & Updates
+Complete section: {{ site.url }}/posts/
+{% for post in site.posts limit:10 %}
+* {{ post.date | date: "%Y-%m-%d" }} - {{ post.title }}
+  URL: {{ site.url }}{{ post.url }}
+  Context: {{ post.ai_summary | default: post.excerpt | strip_html | strip_newlines }}
+{% endfor %}
+
+## Official Links
+* Portfolio: {{ site.url }}
+* About: {{ site.url }}/about/
+* Research: {{ site.url }}/research/
+* Posts: {{ site.url }}/posts/
+* CV: {{ site.url }}/assets/documents/cv-raul-sofia.pdf
+* Google Scholar: https://scholar.google.com/citations?user=ERxgLK4AAAAJ
+* GitHub: https://github.com/RaulSofia
+* LinkedIn: https://www.linkedin.com/in/raul-sofia/

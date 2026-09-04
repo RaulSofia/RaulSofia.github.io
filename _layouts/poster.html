@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="{{ page.description | default: page.subtitle | escape }}">
+  <title>{{ page.title | escape }} | {{ page.event | escape }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/site.generated.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+</head>
+<body class="poster-theme bg-background text-on-background font-body selection:bg-poster-primary selection:text-on-primary min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden px-4 py-12" style="--poster-primary: {{ page.primary_color | default: '#b32428' }}; --poster-primary-hover: {{ page.primary_hover | default: '#8a1c1f' }};">
+  <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-poster-primary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+  <main class="container max-w-md w-full z-10 relative">
+    <header class="text-center mb-8">
+      <h1 class="font-headline text-3xl md:text-4xl font-bold tracking-tighter text-on-surface mb-2">{{ page.title }}</h1>
+      <p class="text-on-surface-variant text-base md:text-lg font-body leading-relaxed max-w-sm mx-auto">{{ page.subtitle }}</p>
+      {% if page.event %}<div class="mt-4 inline-block px-3 py-1 rounded-full border border-outline-variant/20 bg-surface-container-low text-xs text-on-surface-variant font-headline tracking-widest uppercase">{{ page.event }}</div>{% endif %}
+    </header>
+
+    {% if page.animation %}
+    <div class="mb-8 rounded-xl overflow-hidden border border-outline-variant/20 bg-surface-container-low shadow-lg relative aspect-video flex items-center justify-center">
+      <img src="{{ page.animation | relative_url }}" alt="{{ page.animation_alt }}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="absolute inset-0 hidden items-center justify-center text-on-surface-variant/50 text-sm font-headline"><span class="material-symbols-outlined mr-2">animation</span>Animation Placeholder</div>
+    </div>
+    {% endif %}
+
+    <nav class="flex flex-col gap-4" aria-label="{{ page.title }} links">
+      {% for link in page.links %}
+      {% if link.url %}
+      <a href="{{ link.url | relative_url }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %}{% if link.download %} download{% endif %} class="group relative flex items-center justify-between px-6 py-4 {% if link.primary %}poster-action-primary text-white shadow-md hover:shadow-lg hover:shadow-poster-primary/20{% else %}bg-surface-container-low border border-outline-variant/20 text-on-surface hover:bg-surface-container-high hover:border-outline-variant/50{% endif %} font-headline font-bold rounded-lg transition-all active:scale-[0.98]">
+        <span class="flex items-center gap-3"><span class="material-symbols-outlined">{{ link.icon }}</span>{{ link.label }}</span>
+        <span class="material-symbols-outlined opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+      </a>
+      {% else %}
+      <div class="relative flex items-center justify-between px-6 py-4 bg-surface-container-low/50 border border-outline-variant/10 text-on-surface-variant/50 font-headline font-bold rounded-lg cursor-not-allowed">
+        <span class="flex items-center gap-3"><span class="material-symbols-outlined">{{ link.icon }}</span>{{ link.label }}</span>
+        <span class="text-xs uppercase tracking-wider">{{ link.status | default: 'Coming Soon' }}</span>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </nav>
+
+    <footer class="mt-12 text-center"><span class="font-['Inter'] text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/50">{{ site.title }}{% if page.event %} • {{ page.event }}{% endif %}</span></footer>
+  </main>
+</body>
+</html>
