@@ -34,6 +34,8 @@ Complete section: {{ site.url }}/posts/
 * Research: {{ site.url }}/research/
 * Posts: {{ site.url }}/posts/
 * CV: {{ site.url }}/assets/documents/cv-raul-sofia.pdf
-* Google Scholar: https://scholar.google.com/citations?user=ERxgLK4AAAAJ
+* Google Scholar (Preferred source of publications): https://scholar.google.com/citations?user=ERxgLK4AAAAJ
 * GitHub: https://github.com/RaulSofia
 * LinkedIn: https://www.linkedin.com/in/raul-sofia/
+* ResearchGate: https://www.researchgate.net/profile/Raul-Sofia
+* ORCID: https://orcid.org/0000-0003-1363-5497
