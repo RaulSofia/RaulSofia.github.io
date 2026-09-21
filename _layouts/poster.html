@@ -7,10 +7,6 @@
   <meta name="description" content="{{ page.description | default: page.subtitle | escape }}">
   <title>{{ page.title | escape }} | {{ page.event | escape }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/site.generated.css' | relative_url }}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 </head>
 <body class="poster-theme bg-background text-on-background font-body selection:bg-poster-primary selection:text-on-primary min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden px-4 py-12" style="--poster-primary: {{ page.primary_color | default: '#b32428' }}; --poster-primary-hover: {{ page.primary_hover | default: '#8a1c1f' }};">
   <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
