@@ -2,6 +2,7 @@
 layout: default
 title: Research
 permalink: /research/
+description: "Formal research outputs by Raul Sofia including journal articles, conference posters, and software releases."
 ---
 
 <section class="max-w-4xl w-full z-10 text-left">

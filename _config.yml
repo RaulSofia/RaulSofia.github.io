@@ -5,6 +5,17 @@ description: "I specialize in deep learning, generative AI, and geometric deep l
 logo: /assets/images/eu-madeira-crop.jpeg
 url: https://raulsofia.github.io
 baseurl: ""
+author:
+  name: Raul Sofia
+  url: https://raulsofia.github.io
+social:
+  name: Raul Sofia
+  links:
+    - https://github.com/RaulSofia
+    - https://scholar.google.com/citations?user=ERxgLK4AAAAJ
+    - https://www.linkedin.com/in/raul-sofia/
+    - https://www.researchgate.net/profile/Raul-Sofia
+    - https://orcid.org/0000-0003-1363-5497
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

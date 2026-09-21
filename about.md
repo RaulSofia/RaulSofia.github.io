@@ -2,6 +2,7 @@
 layout: about
 title: About me
 permalink: /about/
+description: "About Raul Sofia, AI researcher and ML engineer focused on deep learning and 3D geometric AI. Personal links, narrative curriculum, research interests."
 ---
 
 I am an **AI researcher** and **machine learning engineer** focused on **deep learning**, **3D geometric reasoning**, and artificial intelligence for **complex spatial problems**.
