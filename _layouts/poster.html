@@ -5,9 +5,14 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="robots" content="noindex,follow">
   <meta name="description" content="{{ page.description | default: page.subtitle | escape }}">
-   <link rel="preload" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-   <link rel="preload" href="{{ '/assets/fonts/space-grotesk-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-   <link rel="preload" href="{{ '/assets/fonts/material-symbols-outlined.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon/favicon-16x16.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon/favicon-32x32.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/images/favicon/site.webmanifest' | relative_url }}">
+  <link rel="preload" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/space-grotesk-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/material-symbols-outlined.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <title>{{ page.title | escape }} | {{ page.event | escape }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/site.generated.css' | relative_url }}">
 </head>
